@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Second Thought (Secure)",
+  "version": "1.0",
+  "description": "Twitter i\u00e7in medya okuryazarl\u0131\u011f\u0131 uzant\u0131s\u0131. Kullan\u0131c\u0131dan OpenAI key al\u0131r.",
+  "permissions": [
+    "storage",
+    "scripting",
+    "activeTab",
+    "https://api.openai.com/"
+  ],
+  "host_permissions": [
+    "https://twitter.com/*",
+    "https://x.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://twitter.com/*",
+        "https://x.com/*"
+      ],
+      "js": [
+        "contentScript.js"
+      ]
+    }
+  ]
+}

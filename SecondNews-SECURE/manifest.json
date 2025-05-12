@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "Second News (Secure)",
+  "version": "1.0",
+  "description": "Haber siteleri i\u00e7in medya okuryazarl\u0131\u011f\u0131 uzant\u0131s\u0131. Kullan\u0131c\u0131dan OpenAI API key al\u0131r.",
+  "permissions": [
+    "storage",
+    "scripting",
+    "activeTab",
+    "https://api.openai.com/"
+  ],
+  "host_permissions": [
+    "https://*.hurriyet.com.tr/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.hurriyet.com.tr/*"
+      ],
+      "js": [
+        "contentScript.js"
+      ],
+      "css": [
+        "contentStyles.css"
+      ]
+    }
+  ]
+}
