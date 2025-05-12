@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Second Thought Extensions</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #fafafa, #ffffff);
+      color: #222;
+      scroll-behavior: smooth;
+    }
+    section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 80px 20px;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    #top {
+      background: linear-gradient(to bottom right, #f8f8f8, #ffffff);
+    }
+    #bottom {
+      background: #ffffff;
+      border-top: 2px solid #ddd;
+    }
+    #globe-wrapper {
+      width: 240px;
+      height: 240px;
+      perspective: 1000px;
+      margin-bottom: 30px;
+    }
+    #globe {
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 0.1s ease-out;
+    }
+    .download-btn {
+      margin: 10px;
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: bold;
+      background-color: #8e1c24;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    h2 {
+      margin-bottom: 16px;
+    }
+    p {
+      max-width: 600px;
+      line-height: 1.6;
+      text-align: center;
+    }
+    a {
+      color: #8e1c24;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <section id="top">
+    <div id="globe-wrapper">
+      <div id="globe">
+        
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="100" cy="100" r="70" fill="#8e1c24" />
+  <text x="100" y="110" font-size="40" text-anchor="middle" fill="white" font-family="Arial" font-weight="bold">ST</text>
+  <circle cx="100" cy="100" r="90" fill="none" stroke="#8e1c24" stroke-width="1" stroke-dasharray="4 4"/>
+</svg>
+
+      </div>
+    </div>
+    <a href="SecondThought-SECURE.zip" class="download-btn">Second Thought'u İndir</a>
+    <a href="SecondNews-SECURE.zip" class="download-btn">Second News'i İndir</a>
+  </section>
+
+  <section id="bottom">
+    <h2>OpenAI API Key Nasıl Alınır?</h2>
+    <p>
+      Uzantılarımızı kullanabilmek için bir OpenAI API key'e ihtiyacınız var. Eğer ChatGPT Plus kullanıcısıysanız,
+      bu key'i zaten oluşturabilirsiniz.
+    </p>
+    <p>
+      <strong>1.</strong> <a href="https://platform.openai.com/account/api-keys" target="_blank">OpenAI Key Sayfası</a>'na gidin<br>
+      <strong>2.</strong> "Create new secret key" butonuna tıklayın<br>
+      <strong>3.</strong> Key'i kopyalayın ve uzantı popup'ına yapıştırın
+    </p>
+    <p>
+      Bu key sadece sizin tarayıcınızda saklanır. Bizimle veya kimseyle paylaşılmaz. Güvenle kullanabilirsiniz.
+    </p>
+  </section>
+
+  <script>
+    const globe = document.getElementById("globe");
+    document.addEventListener("mousemove", (e) => {
+      const x = (e.clientX / window.innerWidth - 0.5) * 30;
+      const y = (e.clientY / window.innerHeight - 0.5) * -30;
+      globe.style.transform = `rotateX(${y}deg) rotateY(${x}deg)`;
+    });
+  </script>
+</body>
+</html>
